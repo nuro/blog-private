@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netlify on The ragasirtahk Blog</title>
+    <link>https://www.ragasirtahk.tk/categories/netlify/</link>
+    <description>Recent content in Netlify on The ragasirtahk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 10:16:54 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ragasirtahk.tk/categories/netlify/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up Netlify CMS on Hugo</title>
+      <link>https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/</link>
+      <pubDate>Fri, 26 Jan 2018 10:16:54 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/</guid>
+      <description>About Netlify CMS:  Netlify CMS is an open source content management system for your Git workflow that enables you to provide editors with friendly UI and intuitive workflow. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.</description>
+    </item>
+    
+  </channel>
+</rss>

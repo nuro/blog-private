@@ -1,0 +1,1226 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Setting up Netlify CMS on Hugo</title>
+    <meta name="author" content="Sagar Khatri">
+    <meta name="keywords" content="Netlify, NetlifyCMS, Hugo, Setting up Netlify CMS on Hugo, Static website generator Netlify, Host static blog on Netlify, Sagar Khatri, ragasirtahk, The ragasirtahk Blog, The official blog of Sagar Khatri">
+
+    <link rel="icon" href="https://www.ragasirtahk.tk/images/favicon.png">
+    
+
+    
+    <meta name="description" content="About Netlify CMS:  Netlify CMS is an open source content management system for your Git workflow that enables you to provide editors with friendly UI and intuitive workflow. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.">
+    <meta property="og:description" content="About Netlify CMS:  Netlify CMS is an open source content management system for your Git workflow that enables you to provide editors with friendly UI and intuitive workflow. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Setting up Netlify CMS on Hugo">
+    <meta property="og:url" content="/2018/01/setting-up-netlify-cms-on-hugo/">
+    <meta property="og:site_name" content="The ragasirtahk Blog">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The ragasirtahk Blog">
+    <meta name="twitter:description" content="About Netlify CMS:  Netlify CMS is an open source content management system for your Git workflow that enables you to provide editors with friendly UI and intuitive workflow. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.">
+    
+      <meta name="twitter:creator" content="@ragasirtahk">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="https://www.ragasirtahk.tk/images/uploads/cover-post.jpg">
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://www.ragasirtahk.tk/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-96539727-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://www.ragasirtahk.tk/">The ragasirtahk Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://www.ragasirtahk.tk/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/f89b257948b4a3296680a2cea64be616?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://www.ragasirtahk.tk/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/f89b257948b4a3296680a2cea64be616?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Sagar Khatri</h4>
+        
+          <h5 class="sidebar-profile-bio">Open Source Enthusiast | Blogger | Quizzer | Conversationalist</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://me.ragasirtahk.tk/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-address-card"></i>
+      
+      <span class="sidebar-button-desc">Portfolio</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ragasirtahk" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://facebook.com/ragasirtahk7" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/ragasirtahk" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/ragasirtahk/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.ragasirtahk.tk/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('/images/uploads/cover-post.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Setting up Netlify CMS on Hugo
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-26T10:16:54Z">
+        
+  January 26, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://www.ragasirtahk.tk/categories/tutorials">Tutorials</a>, 
+    
+      <a class="category-link" href="https://www.ragasirtahk.tk/categories/netlify">Netlify</a>
+    
+  
+
+  </div>
+
+   <br>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h1 id="about-netlify-cms-https-www-netlifycms-org">About <a href="https://www.netlifycms.org/">Netlify CMS</a>:</h1>
+
+<blockquote>
+<p>Netlify CMS is an open source content management system for your Git workflow that enables you to provide editors with friendly UI and intuitive workflow. You can use it with any static site generator to create faster, more flexible web projects. Content is stored in your Git repository alongside your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.</p>
+</blockquote>
+
+<h1 id="installing-and-configuring-netlify-cms">Installing and configuring Netlify CMS:</h1>
+
+<p>In this guide I am going to show you how to setup Netlify CMS on a Hugo based site. We will be hosting the website on GitHub and Netlify. The **prerequisites **for the next steps are:</p>
+
+<ul>
+<li>A Hugo website/blog</li>
+<li>GitHub account and basic usage</li>
+<li>A Netlify Account</li>
+</ul>
+
+<blockquote>
+<p><strong>Note:</strong> The theme of your website should only be installed using the <code>git submodule add</code> command. For more info <a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/#use-hugo-themes-with-netlify">read this</a>.</p>
+</blockquote>
+
+<p><strong>If you don&rsquo;t want the to get your hands dirty with some coding then you can simply clone <a href="https://github.com/ragasirtahk/the-ragasirtahk-blog"><strong>this repository</strong></a> (of my blog), configure the theme and then proceed to the Step 4.</strong> Also make sure you delete the content in <code>/content/post</code> and <code>/static/images/uploads/</code>, make changes in the <code>config.toml</code> file before proceeding to Step 4. Delete the contents of <code>/content/post</code> before using as boilerplate. Also delete the AdSense ad code in <code>/themes/hugo-tranquilpeak-theme/layouts/partials/footer.html</code> and <code>/themes/hugo-tranquilpeak-theme/layouts/partials/post/header.html</code> and delete / change the Google Analytics tracking ID in the <code>/config.toml</code> file. Please also delete <code>manifest.json</code>, <code>OneSignalSDKWorker.js</code>, <code>OneSignalSDKUpdaterWorker.js</code> and the folder <code>__MACOSX</code> located in <code>/static</code>.</p>
+
+<h2 id="step-1-creating-the-admin-files">Step 1. Creating the admin files</h2>
+
+<p>All Netlify CMS files are contained in a static admin folder, stored at the root of your published site. The static files of a Hugo site are stored inside the <code>/static</code> location at the root of your website.</p>
+
+<p>Navigate to <code>static</code> of your website and create a folder named <code>admin</code> inside it. If there is no <code>static</code> folder in your website then simply create a new folder and name it.</p>
+
+<p>The <code>admin</code> folder of Netlify CMS contains two files:</p>
+
+<p>admin</p>
+
+<p>├ index.html</p>
+
+<p>└ config.yml</p>
+
+<p>Let us first create the file <code>index.html</code> inside the admin folder The content of this file will be:</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;title&gt;Content Manager&lt;/title&gt;
+
+  &lt;!-- Include the styles for the Netlify CMS UI, after your own styles --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css&quot; /&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Include the script that builds the page and powers Netlify CMS --&gt;
+  &lt;script src=&quot;https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This file allows us to access the admin panel for our website. You will be accessing your admin panel at <code>yourwebsite.com/admin</code>. This file loads up the required script and CSS for Netlify CMS.</p>
+
+<p>In the next file we will configure our Netlify CMS installation. Create a file named <code>config.yml</code> at <code>/static/admin</code> and proceed to the next step.</p>
+
+<h2 id="step-2-configuring-config-yml-file">Step 2. Configuring config.yml file</h2>
+
+<p>Configuring this file depends a lot on your site. The common configurations for each website are described below. Since <strong>we are using Netlify and GitHub for hosting</strong> our website so enter this in your file:</p>
+
+<pre><code>backend:   
+  name: git-gateway   
+  branch: master # Branch to update (optional; defaults to master)
+</code></pre>
+
+<p>You have the option to <strong>enable the Editorial Workflow</strong>, which adds an interface for drafting, reviewing, and approving posts. To do this, add the following line to your <code>config.yml</code>:</p>
+
+<pre><code>publish_mode: editorial_workflow
+</code></pre>
+
+<p>Next we are going to specify the locations where Netlify CMS will store the images you upload to your blog. I wish to store the files in <code>static/images/uploads</code> folder of my website and make them available in the published website at <code>/images/uploads</code>.</p>
+
+<p>While <code>media_folder</code> specifies where uploaded files will be saved in the repo, <code>public_folder</code> indicates where they can be found in the published site. Depending upon your requirements you may edit the code:</p>
+
+<pre><code>media_folder: &quot;static/images/uploads&quot; # Media files will be stored in the repo under static/images/uploads
+public_folder: &quot;/images/uploads&quot; # The src attribute for uploaded media will begin with /images/uploads
+</code></pre>
+
+<blockquote>
+<p>Note: If <code>public_folder</code> is not set, Netlify CMS will default to the same value as <code>media_folder</code>, adding an opening / if one is not included.</p>
+</blockquote>
+
+<p><strong>Next comes the tricky part of the configurations&hellip;.</strong></p>
+
+<h2 id="step-3-specifying-collections-in-config-yml-file"><strong>Step 3. Specifying collections in config.yml file</strong></h2>
+
+<p>Collections define the structure for the different content types on your static site. Since every site is different, the <code>collections</code> settings will be very different from one site to the next.</p>
+
+<p>I wanted my website to have these options while creating a post: <code>Title, Publish Date, Draft, Categories, Tags, Keywords, Auto Thumbnail Image Option, Thumbnail Image, Cover Image and Body</code></p>
+
+<blockquote>
+<p>If you wish to have the same for your website then proceed further otherwise <strong>visit the Netlify CMS docs for <code>Collections</code> on [</strong>this link<strong>](<a href="https://www.netlifycms.org/docs/add-to-your-site/#collections">https://www.netlifycms.org/docs/add-to-your-site/#collections</a>).</strong> There you will find all the explanation and stuff for this step.</p>
+</blockquote>
+
+<p>Enter these lines to your code in the <code>config.yml</code> file:</p>
+
+<pre><code>collections:
+
+  - name: &quot;posts&quot; # Used in routes, e.g., /admin/collections/blog
+
+    label: &quot;Post&quot; # Used in the UI
+
+    folder: &quot;content/post&quot; # The path to the folder where the documents are stored
+
+    create: true # Allow users to create new documents in this collection
+
+    slug: &quot;{{slug}}&quot; # Filename template, e.g., YYYY-MM-DD-title.md
+
+    fields: # The fields for each document, usually in front matter
+
+      - label: &quot;Title&quot;
+        name: &quot;title&quot;
+        widget: &quot;string&quot;
+
+      - label: &quot;Publish Date&quot;
+        name: &quot;date&quot;
+        required: false
+        widget: &quot;datetime&quot;
+
+      - label: &quot;Draft&quot;
+        name: &quot;draft&quot;
+        required: false
+        widget: &quot;boolean&quot;
+        default: true
+
+      - label: &quot;Categories&quot;
+        name: &quot;categories&quot;
+        required: false
+        widget: &quot;list&quot;
+
+      - label: &quot;Tags&quot;
+        name: &quot;tags&quot;
+        required: false
+        widget: &quot;list&quot;
+
+      - label: &quot;Keywords&quot;
+        name: &quot;keywords&quot;
+        required: false
+        widget: &quot;list&quot;
+
+      - label: &quot;Auto Thumbnail Image&quot;
+        name: &quot;autoThumbnailImage&quot;
+        required: false
+        widget: &quot;boolean&quot;
+        default: true
+
+      - label: &quot;Thumbnail Image Position&quot;
+        name: &quot;thumbnailImagePosition&quot;
+        required: false
+        widget: &quot;select&quot;
+        options: [&quot;left&quot;, &quot;top&quot;, &quot;right&quot;]
+
+      - label: &quot;Thumbnail Image&quot;
+        name: &quot;thumbnailImage&quot;
+        required: false
+        widget: &quot;image&quot;
+
+      - label: &quot;Cover Image&quot;
+        name: &quot;coverImage&quot;
+        required: false
+        widget: &quot;image&quot;
+
+      - label: &quot;Body&quot;
+        name: &quot;body&quot;
+        widget: &quot;markdown&quot;
+</code></pre>
+
+<h2 id="step-4-setup-on-netlify">Step 4. Setup on Netlify</h2>
+
+<p>Before we push our code to GitHub and Netlify we need to make another configuration. We need to specify the Hugo Version which should be used by Netlify to generate the website. To do so, at the root of your website&rsquo;s create a new file named <code>netlify.toml</code> with content:</p>
+
+<pre><code>[build.environment]  HUGO_VERSION = &quot;0.33&quot;
+</code></pre>
+
+<p>Upload all the code of your website on a repository on GitHub.</p>
+
+<p>Login to your Netlify Account. Click on <code>New Site from Git</code>. Now choose GitHub. Netlify will now ask for permission, allow by clicking on <code>Authorize Application</code>. On the next screen choose the repository to which you uploaded the code of your website. On the next screen you will see something like this:</p>
+
+<p><img src="https://www.ragasirtahk.tk/images/uploads/screenshot-2018-1-26 create a new site netlify.png" alt="Create a new site on Netlify" /></p>
+
+<p>Write <code>hugo</code> in the <code>Build command</code> field. For the <code>Publish directory</code> field you need to know where Hugo build and saves your website, the default is <code>public/</code>, write the location in this field. Click <code>Deploy site</code>. Netlify will publish the contents of the <code>Publish directory</code> online after executing the <code>Build command</code>.</p>
+
+<p>The website has now been setup on Netlify.</p>
+
+<blockquote>
+<p>You may configure your Netlify website further by viewing the <a href="https://www.netlify.com/docs/">Netlify docs</a>.</p>
+</blockquote>
+
+<h2 id="step-5-enable-identity-and-git-gateway">Step 5. Enable Identity and Git Gateway</h2>
+
+<p>For this step please follow the steps described in <a href="https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway">this guide</a>.</p>
+
+<h2 id="step-6-add-the-netlify-identity-widget">Step 6. Add the Netlify Identity Widget</h2>
+
+<p>Use the Netlify&rsquo;s snippet injection feature and add this code before <code>&lt;/head&gt;</code>:</p>
+
+<pre><code>&lt;script src=&quot;https://identity.netlify.com/v1/netlify-identity-widget.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Add this before <code>&lt;/body&gt;</code>:</p>
+
+<pre><code>&lt;script&gt;
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on(&quot;init&quot;, user =&gt; {
+      if (!user) {
+        window.netlifyIdentity.on(&quot;login&quot;, () =&gt; {
+          document.location.href = &quot;/admin/&quot;;
+        });
+      }
+    });
+  }
+&lt;/script&gt;
+</code></pre>
+
+<p>The guide for using this feature is available <a href="https://www.netlify.com/docs/inject-analytics-snippets/">here</a>.</p>
+
+<h2 id="step-7-accessing-the-cms">Step 7. Accessing the CMS</h2>
+
+<p>You might have receieved an email saying &ldquo;You&rsquo;ve been invited to join <code>xyz</code>&rdquo; from the email: <code>no-reply@netlify.com</code>. If you did not receive the email then you need to invite yourself to access the CMS.</p>
+
+<p>To do this, select the <strong>Identity</strong> tab from your site dashboard, and then select the <strong>Invite users</strong> button. Invited users will receive an email invitation with a confirmation link. Clicking the link will take you to your site with a login prompt.</p>
+
+<p>If you left your site registration open, or for return visits after comfirming an email invitation, you can access your site’s CMS at <code>yoursite.com/admin/</code>.</p>
+
+<h2 id="summing-up">Summing Up</h2>
+
+<p>So in this guide I have explained you <strong>how to setup Netlify CMS on Hugo and host in on Netlify and GitHub</strong>.</p>
+
+<blockquote>
+<p>You can view the code of this whole blog in <a href="https://github.com/ragasirtahk/the-ragasirtahk-blog">this GitHub repository</a>.</p>
+</blockquote>
+
+<p>If you have any queries or suggestions, I will love to hear them in the comments box below.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://www.ragasirtahk.tk/tags/netlify/">Netlify</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.ragasirtahk.tk/tags/netlify-cms/">Netlify-CMS</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.ragasirtahk.tk/tags/hugo/">Hugo</a>
+
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.ragasirtahk.tk/2018/02/achievements/" data-tooltip="Achievements">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.ragasirtahk.tk/2018/01/hello-world/" data-tooltip="Hello World">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 <a href="https://github.com/ragasirtahk">Sagar Khatri</a>. All Rights Reserved. <a href = "https://gohugo.io/" target="blank">Hugo</a> + <a href = "https://www.netlifycms.org/" target="blank">Netlify CMS</a> = &hearts;
+    <br>
+    &#10096;<a href ="https://github.com/ragasirtahk/The-ragasirtahk-Blog">View the source of this blog on GitHub</a>&#10097;
+    <hr>
+    <a href ="/cookie-policy.html">Cookie Policy</a>|<a href ="/disclaimer.html">Disclaimer</a>|<a href ="/privacy-policy.html">Privacy Policy</a>|<a href ="/terms-and-conditions.html">T&C</a>
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.ragasirtahk.tk/2018/02/achievements/" data-tooltip="Achievements">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.ragasirtahk.tk/2018/01/hello-world/" data-tooltip="Hello World">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.ragasirtahk.tk/2018/01/setting-up-netlify-cms-on-hugo/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ragasirtahk.tk%2F2018%2F01%2Fsetting-up-netlify-cms-on-hugo%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.ragasirtahk.tk%2F2018%2F01%2Fsetting-up-netlify-cms-on-hugo%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ragasirtahk.tk%2F2018%2F01%2Fsetting-up-netlify-cms-on-hugo%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/f89b257948b4a3296680a2cea64be616?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Sagar Khatri</h4>
+    
+      <div id="about-card-bio">Open Source Enthusiast | Blogger | Quizzer | Conversationalist</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student @ DPS Sonepat
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        India
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/no-reason-to-hide/">
+                <h3 class="media-heading">No Reason to Hide</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I see the tears in your eyes
+I think there is no reason to hide Years passed by
+Moments evolved
+Into this time The silence
+Inaudible emotions
+Say it all Please speak up
+Open your heart
+There is much to say
+Forgetting is an art I see the tears in your eyes
+I think there is no reason to hide</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/you-are-the-light/">
+                <h3 class="media-heading">You are the Light</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">How do I say
+What do I say
+You are the light
+Holding my sight When I met
+With that smile
+My heart was your
+At first sight Never to realise
+That was drifting
+Drifting us close
+Was that time I swear
+I will be there
+Everytime
+For you
+Not like a lover
+More like a soldier
+Supporting you
+From the distress Words fall short
+To thank you the most</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/can-i-get-it-all-back/">
+                <h3 class="media-heading">Can I Get it All Back?</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Can I get it all back?
+The mellow hi-s
+The beautiful smiles
+Can I get it all back? Petty fights
+Mischeivous eyes
+Those were the days
+Can I get it all back? The long talks
+Like adventurous walks
+Was the discovery of
+Beautiful life
+Can I get it all back? I never imagined
+For God&rsquo;s sake
+It will all vanish
+Like things that perish
+More like a nightmare
+Say, separating in a fare</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/its-all-about-choices/">
+                <h3 class="media-heading">It&#39;s all About Choices</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I am here
+Waiting for you
+You are there
+Waiting for him
+It&rsquo;s all about choices My pen bleeds
+Inner voice seeps
+Mist on lenses
+Say it all
+It&rsquo;s all about choices More like a dream
+Sweetest os the sweet
+Freezing speed of life
+You are there
+Not with me
+But happier with him
+&lsquo;Cause it&rsquo;s all about choices</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/that-particular-moment/">
+                <h3 class="media-heading">That Particular Moment</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I still recall
+That beautiful day
+You like a doll
+Mesmerized was I
+Lost was I
+Then you said hi
+That particular moment I looked for something cool
+As reply to you
+But I fumbled
+Weird as usual
+Then you smiled
+That particular moment Then the internet
+Sleepless nights
+Pinging nights
+Happy nights
+Missed you I
+When you said goodbye
+That particular moment I decided to
+Give you a gift</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/tell-me-why/">
+                <h3 class="media-heading">Tell Me Why</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Sleepless nights
+Un-flown kites
+Is this love
+Tell me why? Fumbled talks
+Disastrous walks
+Looking for you
+Shying from you
+Is this love
+Tell me why? Things I blurt
+Taken as flirt
+Hidden feelings
+Fearing love
+Things are liked
+People are loved
+Is this love
+Tell me why? Regular risks
+Joyous frisks
+Is this love
+Tell me why? I am obsessed
+Rather over possessed
+They believe
+I am lost</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/so-strange/">
+                <h3 class="media-heading">So Strange</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">When I was young
+I used to believe
+People hide feelings
+It’s so strange I met you
+Eye met you
+The world whispered
+And I fumbled
+Grasping for words
+Easing me there
+Was that smile
+Frozen moments
+Void speed of life
+Tearing me apart
+Killing from within
+There was that feeling
+The feeling that I hide Now I understand
+Now I believe
+People hide feelings
+It’s not so strange.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/prisoner-is-i/">
+                <h3 class="media-heading">Prisoner is I</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Life is so strange
+Full of craze
+I thought it may be forgetful
+You proved it may be magical
+Love is unforgiving
+Prisoner is I Drifting in the sunshine
+Apricots and wine
+You and I
+Ever be my
+Love is unforgiving
+Prisoner is I Too many times
+I tried to hide
+Oh, love from thy
+But you let that chime
+Love is unforgiving
+Prisoner is I Full of peace</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/all-for-you/">
+                <h3 class="media-heading">All for You</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">People have secrets
+My secret is you
+Every poet has a story
+My story is you
+God gives gifts
+He gave me you
+Love is power
+My power is you
+Dreams are beautiful
+Beautiful is you
+Worldly desires
+My desire is you
+People seek love
+I seek you
+Words are few
+To describe you
+Magic is now
+Thanks to you
+Oh, mother
+Oh, father
+I love you
+All this is for you.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.ragasirtahk.tk/2018/08/i-you/">
+                <h3 class="media-heading">I You</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I be the man
+You be the girl
+I flip the pan
+You swing the curl You carry love
+I carry heart
+Beautiful dove
+Leads our cart 14 years
+Wonderful marriage
+You serve the platter
+I lead the carriage Lost in thoughts
+Don&rsquo;t worry a lot
+I earn the notes
+You prepare the cot I may be weird
+But I&rsquo;ll keep you cheered
+I may be ugly
+But I&rsquo;ll keep you cuddly You say I flirt</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         21 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://www.ragasirtahk.tk/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://www.ragasirtahk.tk/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/www.ragasirtahk.tk\/2018\/01\/setting-up-netlify-cms-on-hugo\/';
+          
+            this.page.identifier = '\/2018\/01\/setting-up-netlify-cms-on-hugo\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'the-ragasirtahk-blog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

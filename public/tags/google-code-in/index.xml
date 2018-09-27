@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Code In on The ragasirtahk Blog</title>
+    <link>https://www.ragasirtahk.tk/tags/google-code-in/</link>
+    <description>Recent content in Google Code In on The ragasirtahk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Mar 2018 08:38:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ragasirtahk.tk/tags/google-code-in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Code-in 2017 Wrap Up</title>
+      <link>https://www.ragasirtahk.tk/2018/03/google-code-in-2017-wrap-up/</link>
+      <pubDate>Thu, 01 Mar 2018 08:38:02 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/2018/03/google-code-in-2017-wrap-up/</guid>
+      <description>Google Code-in 2017 results were anounced on 31 January 2018. And I was chosen one of the finalists for Drupal! Congrats to all other winners.
+ The results can be viewed here: https://codein.withgoogle.com/#winners
+ I know this post is coming a bit late because of my grade 11 exams. I wrote this post as soon as I got a break from studies.
+This was the first time that I participated in Google Code-in.</description>
+    </item>
+    
+  </channel>
+</rss>

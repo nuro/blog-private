@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Random Discoveries on The ragasirtahk Blog</title>
+    <link>https://www.ragasirtahk.tk/categories/random-discoveries/</link>
+    <description>Recent content in Random Discoveries on The ragasirtahk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jan 2018 07:21:42 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ragasirtahk.tk/categories/random-discoveries/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://www.ragasirtahk.tk/2018/01/hello-world/</link>
+      <pubDate>Sat, 20 Jan 2018 07:21:42 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/2018/01/hello-world/</guid>
+      <description>&lt;p&gt;I decided to gift myself a new blog and here is the result ;)
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

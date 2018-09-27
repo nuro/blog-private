@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on The ragasirtahk Blog</title>
+    <link>https://www.ragasirtahk.tk/categories/</link>
+    <description>Recent content in Categories on The ragasirtahk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Feb 2018 07:38:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.ragasirtahk.tk/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://www.ragasirtahk.tk/categories/about-me/</link>
+      <pubDate>Thu, 01 Feb 2018 07:38:02 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/about-me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Achievements</title>
+      <link>https://www.ragasirtahk.tk/categories/achievements/</link>
+      <pubDate>Thu, 01 Feb 2018 07:38:02 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/achievements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://www.ragasirtahk.tk/categories/blog/</link>
+      <pubDate>Thu, 23 Aug 2018 11:26:42 +0530</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Competitions</title>
+      <link>https://www.ragasirtahk.tk/categories/competitions/</link>
+      <pubDate>Thu, 01 Mar 2018 08:38:02 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/competitions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netlify</title>
+      <link>https://www.ragasirtahk.tk/categories/netlify/</link>
+      <pubDate>Fri, 26 Jan 2018 10:16:54 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/netlify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Discoveries</title>
+      <link>https://www.ragasirtahk.tk/categories/random-discoveries/</link>
+      <pubDate>Sat, 20 Jan 2018 07:21:42 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/random-discoveries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Pens</title>
+      <link>https://www.ragasirtahk.tk/categories/random-pens/</link>
+      <pubDate>Thu, 23 Aug 2018 11:26:42 +0530</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/random-pens/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://www.ragasirtahk.tk/categories/tutorials/</link>
+      <pubDate>Fri, 26 Jan 2018 10:16:54 +0000</pubDate>
+      
+      <guid>https://www.ragasirtahk.tk/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
